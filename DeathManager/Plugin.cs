@@ -53,22 +53,27 @@ namespace DeathManager
             if (Instance.Configuration.Instance.Enabled)
             {
                 UnturnedPlayerEvents.OnPlayerDeath += OnPlayerDeath;
-                Logger.LogWarning("The plugin has been Loaded!");
+                // CS0104: 'Logger' is an ambiguous reference between 'Rocket.Core.Logging.Logger' and 'UnityEngine.Logger'.
+                Rocket.Core.Logging.Logger.LogWarning("The plugin has been Loaded!");
                 if (Instance.Configuration.Instance.ShowErrorMessages)
                 {
-                    Logger.LogWarning("| Show error messages : True                          |");
+                    // CS0104: 'Logger' is an ambiguous reference between 'Rocket.Core.Logging.Logger' and 'UnityEngine.Logger'.
+                    Rocket.Core.Logging.Logger.LogWarning("| Show error messages : True                          |");
                 }
                 else
                 {
-                    Logger.LogWarning("| Show error messages : False                         |");
+                    // CS0104: 'Logger' is an ambiguous reference between 'Rocket.Core.Logging.Logger' and 'UnityEngine.Logger'.
+                    Rocket.Core.Logging.Logger.LogWarning("| Show error messages : False                         |");
                 }
                 if (Instance.Configuration.Instance.ShowSuicideMessages)
                 {
-                    Logger.LogWarning("| Show suicide messages : True                        |");
+                    // CS0104: 'Logger' is an ambiguous reference between 'Rocket.Core.Logging.Logger' and 'UnityEngine.Logger'.
+                    Rocket.Core.Logging.Logger.LogWarning("| Show suicide messages : True                        |");
                 }
                 else
                 {
-                    Logger.LogWarning("| Show suicide messages : False                       |");
+                    // CS0104: 'Logger' is an ambiguous reference between 'Rocket.Core.Logging.Logger' and 'UnityEngine.Logger'.
+                    Rocket.Core.Logging.Logger.LogWarning("| Show suicide messages : False                       |");
                 }
             }
         }
@@ -175,8 +180,10 @@ namespace DeathManager
             {
                 if (Instance.Configuration.Instance.ShowErrorMessages)
                 {
-                    Logger.LogError("Error: Could not find <cause.Death>");
-                    Logger.LogError("Description: " + exc);
+                    // CS0104: 'Logger' is an ambiguous reference between 'Rocket.Core.Logging.Logger' and 'UnityEngine.Logger'.
+                    Rocket.Core.Logging.Logger.LogError("Error: Could not find <cause.Death>");
+                    // CS0104: 'Logger' is an ambiguous reference between 'Rocket.Core.Logging.Logger' and 'UnityEngine.Logger'.
+                    Rocket.Core.Logging.Logger.LogError("Description: " + exc);
                 }
                 UnturnedChat.Say(Translate("null", player.DisplayName), UnturnedChat.GetColorFromName(Configuration.Instance.DeathMessagesColor, Color.green));
             }
